@@ -1,0 +1,99 @@
+Freehand SVG Drawing Tool – Detailed Description
+
+This project is a Freehand SVG Drawing Tool that allows the user to draw freehand lines directly on an SVG canvas using the mouse. It also includes a Clear button to reset the canvas. The project is divided into three parts:
+
+1.exp6.html → Structure of the page
+
+2.exp6.css → Styling and design
+
+3.exp6.js → Drawing functionality
+
+HTML (exp6.html)
+
+1.The HTML file provides the basic structure of the drawing tool.
+
+2.A toolbar containing a "Clear" button for removing all drawings
+
+3.An SVG canvas (800 × 500) where the user can draw with the mouse
+
+4.Script reference linking the JavaScript file for functionality
+
+5.This setup ensures there is a workspace (canvas) and a control option (clear button).
+
+CSS (exp6.css)
+
+1.The CSS styles the toolbar, button, and canvas for usability.
+
+2.Toolbar: Small margin to separate controls from the canvas
+
+3.Button: Styled with borders, padding, and background for a clickable look
+
+4.Canvas: Bordered area with light background to make drawings visible
+
+5.Paths (lines): No fill, black stroke, smooth rounded corners for natural drawing
+
+JavaScript (exp6.js)
+
+The JavaScript file is the core logic of this project. It controls how the drawing works and manages the clear functionality.
+
+Element Selection:
+
+1.Selects the SVG canvas where the user will draw.
+
+2.Selects the Clear button to allow resetting the canvas.
+
+3.Drawing State Management
+
+4.A boolean variable drawing keeps track of whether the mouse is currently pressed (drawing mode on/off).
+
+5.A variable currentPath stores the path element being drawn.
+
+Capturing Mouse Position:
+
+1.A helper function calculates the exact mouse position relative to the SVG canvas.
+
+2.This ensures smooth and accurate drawing regardless of the canvas’s placement on the screen.
+
+Mouse Events
+
+Mouse Down (Start Drawing):
+
+1.Sets drawing to true.
+
+2.Creates a new SVG <path> element starting at the mouse position.
+
+3.Adds this path to the canvas.
+
+Mouse Move (Continue Drawing):
+
+1.Runs only if drawing is true.
+
+2.Updates the d attribute of the current path to add new line segments as the mouse moves.
+
+3.This creates a continuous freehand line following the cursor.
+
+Mouse Up (Stop Drawing):
+
+1.Ends drawing by setting drawing back to false.
+
+2.Resets currentPath so a new stroke can start next time.
+
+Clear Button Functionality:
+
+1.When the Clear button is clicked, it removes all child elements (paths) inside the SVG.
+
+2.This instantly clears the canvas, giving the user a fresh workspace.
+
+Key Points of JavaScript Functionality:
+
+1.Real-time drawing achieved by continuously updating the path while the mouse moves.
+
+2.State tracking using drawing and currentPath ensures lines only appear when the mouse is pressed.
+
+3.Accurate mouse positioning ensures drawing happens inside the SVG area, not relative to the whole screen.
+
+4.Dynamic path creation allows multiple strokes without overwriting old ones.
+
+5.Clear button control instantly resets the canvas by removing all paths.
+
+End Result: The user can freely draw on the SVG canvas with their mouse, creating smooth freehand lines. The Clear button resets the canvas so new drawings can be started anytime.

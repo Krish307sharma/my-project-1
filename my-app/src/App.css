@@ -1,4 +1,4 @@
-/* General container */
+
 .container {
   max-width: 600px;
   margin: 40px auto;
@@ -9,7 +9,7 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* Orders list styling */
+
 .orders-list {
   list-style-type: none;
   padding: 0;
@@ -26,7 +26,7 @@
   border: 1px solid #ddd;
 }
 
-/* Form styling */
+
 .order-form input {
   display: block;
   width: 100%;
